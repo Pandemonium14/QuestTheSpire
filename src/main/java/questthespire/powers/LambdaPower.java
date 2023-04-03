@@ -1,4 +1,4 @@
-package code.powers;
+package questthespire.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
 

@@ -1,10 +1,10 @@
-package code.cards.cardvars;
+package questthespire.cards.cardvars;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import code.cards.AbstractEasyCard;
+import questthespire.cards.AbstractEasyCard;
 
-import static code.ModFile.makeID;
+import static questthespire.QuestTheSpireMod.makeID;
 
 public class SecondDamage extends DynamicVariable {
 

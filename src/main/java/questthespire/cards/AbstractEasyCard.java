@@ -1,4 +1,4 @@
-package code.cards;
+package questthespire.cards;
 
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
@@ -15,13 +15,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import code.CharacterFile;
-import code.util.CardArtRoller;
+import questthespire.util.CardArtRoller;
 
-import static code.ModFile.makeImagePath;
-import static code.ModFile.modID;
-import static code.util.Wiz.atb;
-import static code.util.Wiz.att;
+import static questthespire.QuestTheSpireMod.makeImagePath;
+import static questthespire.QuestTheSpireMod.modID;
+import static questthespire.util.Wiz.atb;
+import static questthespire.util.Wiz.att;
 
 public abstract class AbstractEasyCard extends CustomCard {
 
@@ -38,10 +37,6 @@ public abstract class AbstractEasyCard extends CustomCard {
     public boolean isSecondDamageModified;
 
     private boolean needsArtRefresh = false;
-
-    public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        this(cardID, cost, type, rarity, target, CharacterFile.Enums.TODO_COLOR);
-    }
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
         super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),

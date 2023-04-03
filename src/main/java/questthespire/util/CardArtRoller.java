@@ -1,6 +1,5 @@
-package code.util;
+package questthespire.util;
 
-import basemod.BaseMod;
 import basemod.patches.whatmod.WhatMod;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -22,7 +21,7 @@ import com.megacrit.cardcrawl.cards.red.Defend_Red;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.random.Random;
-import code.cards.AbstractEasyCard;
+import questthespire.cards.AbstractEasyCard;
 
 import java.util.ArrayList;
 import java.util.HashMap;

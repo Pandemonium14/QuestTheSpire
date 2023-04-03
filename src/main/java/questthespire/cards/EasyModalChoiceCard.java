@@ -1,11 +1,11 @@
-package code.cards;
+package questthespire.cards;
 
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static code.ModFile.makeID;
+import static questthespire.QuestTheSpireMod.makeID;
 
 @AutoAdd.Ignore
 public class EasyModalChoiceCard extends AbstractEasyCard {

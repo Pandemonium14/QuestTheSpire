@@ -1,12 +1,12 @@
-package code.relics;
+package questthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import code.util.TexLoader;
+import questthespire.util.TexLoader;
 
-import static code.ModFile.makeRelicPath;
-import static code.ModFile.modID;
+import static questthespire.QuestTheSpireMod.makeRelicPath;
+import static questthespire.QuestTheSpireMod.modID;
 
 public abstract class AbstractEasyRelic extends CustomRelic {
     public AbstractCard.CardColor color;

@@ -1,59 +1,39 @@
-package code;
+package questthespire;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import code.cards.AbstractEasyCard;
-import code.cards.cardvars.SecondDamage;
-import code.cards.cardvars.SecondMagicNumber;
-import code.relics.AbstractEasyRelic;
+import questthespire.cards.AbstractEasyCard;
+import questthespire.cards.cardvars.SecondDamage;
+import questthespire.cards.cardvars.SecondMagicNumber;
+import questthespire.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
-public class ModFile implements
+public class QuestTheSpireMod implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
-        EditKeywordsSubscriber,
-        EditCharactersSubscriber {
+        EditKeywordsSubscriber {
 
-    public static final String modID = "todomod"; //TODO: Change this.
+    public static final String modID = "spirequest";
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
     }
 
-    public static Color characterColor = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1); // This should be changed eventually
-
-    public static final String SHOULDER1 = modID + "Resources/images/char/mainChar/shoulder.png";
-    public static final String SHOULDER2 = modID + "Resources/images/char/mainChar/shoulder2.png";
-    public static final String CORPSE = modID + "Resources/images/char/mainChar/corpse.png";
-    private static final String ATTACK_S_ART = modID + "Resources/images/512/attack.png";
-    private static final String SKILL_S_ART = modID + "Resources/images/512/skill.png";
-    private static final String POWER_S_ART = modID + "Resources/images/512/power.png";
-    private static final String CARD_ENERGY_S = modID + "Resources/images/512/energy.png";
-    private static final String TEXT_ENERGY = modID + "Resources/images/512/text_energy.png";
-    private static final String ATTACK_L_ART = modID + "Resources/images/1024/attack.png";
-    private static final String SKILL_L_ART = modID + "Resources/images/1024/skill.png";
-    private static final String POWER_L_ART = modID + "Resources/images/1024/power.png";
-    private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
-    private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
-    private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,
@@ -68,14 +48,8 @@ public class ModFile implements
         return "eng";
     }
 
-    public ModFile() {
+    public QuestTheSpireMod() {
         BaseMod.subscribe(this);
-
-        BaseMod.addColor(CharacterFile.Enums.TODO_COLOR, characterColor, characterColor, characterColor,
-                characterColor, characterColor, characterColor, characterColor,
-                ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
-                ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
-                CARD_ENERGY_L, TEXT_ENERGY);
     }
 
     public static String makePath(String resourcePath) {
@@ -99,13 +73,7 @@ public class ModFile implements
     }
 
     public static void initialize() {
-        ModFile thismod = new ModFile();
-    }
-
-    @Override
-    public void receiveEditCharacters() {
-        BaseMod.addCharacter(new CharacterFile(CharacterFile.characterStrings.NAMES[1], CharacterFile.Enums.THE_TODO),
-                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, CharacterFile.Enums.THE_TODO);
+        QuestTheSpireMod thismod = new QuestTheSpireMod();
     }
 
     @Override
@@ -140,8 +108,6 @@ public class ModFile implements
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/" + getLangString() + "/Cardstrings.json");
 
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/" + getLangString() + "/Relicstrings.json");
-
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/" + getLangString() + "/Charstrings.json");
 
         BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/" + getLangString() + "/Powerstrings.json");
     }
